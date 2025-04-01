@@ -27,8 +27,8 @@ class FlightControlTower:
                 flight.status = status
                 self.notify_observers(f"Flight {flight_number} status updated to {status}")
                 return # Exit the loop after updating the flight
-            else:
-                print(f"Flight {flight_number} not found.")
+            print(f"Flight {flight_number} not found.")
+            raise ValueError(f"Flight {flight_number} not found.")
 
 class Flight:
     def __init__(self, flight_number: str, airline: str, aircraft_registration: str, origin_airport: str, status: str = "Scheduled"):
