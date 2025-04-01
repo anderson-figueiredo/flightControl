@@ -59,8 +59,11 @@ def main():
     print(flight1)
     print(flight2)
     
-    tower.update_flight_status("AB123", "Boarding")
-    tower.update_flight_status("CD456", "Departed")
+    try:
+        tower.update_flight_status("AB123", "Boarding")
+        tower.update_flight_status("CD456", "Departed")
+    except ValueError as e:
+        print(e)
 
 if __name__ == "__main__":
     main()
